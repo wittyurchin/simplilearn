@@ -1,0 +1,55 @@
+{
+	"compiler": {
+		"version": "0.6.3+commit.8dda9521"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "TransferMoney",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMoney",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/money.sol": "Money"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/money.sol": {
+			"keccak256": "0x9069ed7143027cf20d3ada1be49a2c6e6e460ea93cebd2f316d4328ad9931156",
+			"urls": [
+				"bzz-raw://c084ce56eb0cabbdba74a0820a208f1eb865c02ccb0e3361db2b55fe504a458b",
+				"dweb:/ipfs/QmaayZDnk2UaSDEDGo2TKiYymtZ1iiz1N3QsNLSvX5vbYX"
+			]
+		}
+	},
+	"version": 1
+}

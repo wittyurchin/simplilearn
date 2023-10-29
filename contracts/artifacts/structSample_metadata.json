@@ -1,0 +1,88 @@
+{
+	"compiler": {
+		"version": "0.6.3+commit.8dda9521"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "_key",
+						"type": "uint8"
+					}
+				],
+				"name": "getLearnerDetails",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "_key",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint8",
+						"name": "_age",
+						"type": "uint8"
+					}
+				],
+				"name": "setLearnerDetails",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/structs.sol": "structSample"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/structs.sol": {
+			"keccak256": "0xeb57b1199a45e534271529dfb98b700b1bd710c2769f3d2560a2859090a98f42",
+			"urls": [
+				"bzz-raw://8efd714dfb4f1d4f14799260197b6c2f3a07d2d84bc0089c325a0f8e2c065bd9",
+				"dweb:/ipfs/QmZwrC79NRD2c2dnFx2kdKdPHrq9nkHHGiRxP62Pj9qmNR"
+			]
+		}
+	},
+	"version": 1
+}
