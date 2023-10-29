@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.3+commit.8dda9521"
+		"version": "0.6.0+commit.26b70077"
 	},
 	"language": "Solidity",
 	"output": {
@@ -44,10 +44,10 @@
 	},
 	"sources": {
 		"contracts/money.sol": {
-			"keccak256": "0x9069ed7143027cf20d3ada1be49a2c6e6e460ea93cebd2f316d4328ad9931156",
+			"keccak256": "0x243589a2a6d30e61fba42b8b7f25187d952eff53aac965e034fafc84ddd9f043",
 			"urls": [
-				"bzz-raw://c084ce56eb0cabbdba74a0820a208f1eb865c02ccb0e3361db2b55fe504a458b",
-				"dweb:/ipfs/QmaayZDnk2UaSDEDGo2TKiYymtZ1iiz1N3QsNLSvX5vbYX"
+				"bzz-raw://78acfbf2b9d377d513ce9245a5e0adda1f5c1c8a42d25a3f14cf2a2c703de958",
+				"dweb:/ipfs/QmQBKtLTE5yC4Ns4KwG7aYiAoq2W88RFd1JTBu4BPAak1G"
 			]
 		}
 	},

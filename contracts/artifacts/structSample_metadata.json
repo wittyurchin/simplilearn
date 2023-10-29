@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.3+commit.8dda9521"
+		"version": "0.6.12+commit.27d51765"
 	},
 	"language": "Solidity",
 	"output": {
@@ -54,10 +54,14 @@
 			}
 		],
 		"devdoc": {
-			"methods": {}
+			"kind": "dev",
+			"methods": {},
+			"version": 1
 		},
 		"userdoc": {
-			"methods": {}
+			"kind": "user",
+			"methods": {},
+			"version": 1
 		}
 	},
 	"settings": {
@@ -77,10 +81,11 @@
 	},
 	"sources": {
 		"contracts/structs.sol": {
-			"keccak256": "0xeb57b1199a45e534271529dfb98b700b1bd710c2769f3d2560a2859090a98f42",
+			"keccak256": "0x929500f9c00fad7d27630a18222b680dbf41d894eeaf2bca0b7363c5ed97e78b",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://8efd714dfb4f1d4f14799260197b6c2f3a07d2d84bc0089c325a0f8e2c065bd9",
-				"dweb:/ipfs/QmZwrC79NRD2c2dnFx2kdKdPHrq9nkHHGiRxP62Pj9qmNR"
+				"bzz-raw://9633010b72ef0cfd129bba17f921a52797a45a58fcd778111ee5646694ceab4e",
+				"dweb:/ipfs/QmQVNdnGwLHXGa2uEaQoXkxrQ9m9PodPZXXzy2JRrbM9EL"
 			]
 		}
 	},

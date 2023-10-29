@@ -28,7 +28,7 @@ contract variable{
 
 }
 
-2nd Code 
+//2nd Code 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.3;
 

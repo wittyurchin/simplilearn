@@ -1,0 +1,72 @@
+{
+	"compiler": {
+		"version": "0.8.22+commit.4fc1097e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getvalue",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "hello",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/local.sol": "local"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/local.sol": {
+			"keccak256": "0xcffcb50ccee3ff30cbc3db4db44fd70fc1957d5cc52fe5745e4a3ab65bdc86c4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4d47c9987fa7c1d11e283f4c612dbfaccf3aedbc35186c896e5b571e5b6b3a9c",
+				"dweb:/ipfs/QmeauGLZoCdBmh4WS95tUqzQMRXFhCf7r2fSjx3efZSvHW"
+			]
+		}
+	},
+	"version": 1
+}

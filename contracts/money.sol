@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT 
+
 pragma solidity ^0.6.0;
 
 contract Money{
@@ -10,4 +12,5 @@ contract Money{
     function TransferMoney() public {
         payable(alice).transfer(address(this).balance);
     }
+    //fallback() external payable{}
 }
