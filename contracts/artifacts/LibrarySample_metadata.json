@@ -1,0 +1,80 @@
+{
+	"compiler": {
+		"version": "0.8.22+commit.4fc1097e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "int256",
+						"name": "a",
+						"type": "int256"
+					},
+					{
+						"internalType": "int256",
+						"name": "b",
+						"type": "int256"
+					},
+					{
+						"internalType": "int256",
+						"name": "c",
+						"type": "int256"
+					},
+					{
+						"internalType": "int256",
+						"name": "d",
+						"type": "int256"
+					}
+				],
+				"name": "adding",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Copy_library.sol": "LibrarySample"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Copy_library.sol": {
+			"keccak256": "0x1b61735f4f72902a781a89a2fac12c21bf4c3775b77f4d1fad3999a684514184",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e050c5da7936ea91647a1e875264d571a16147aafb3ebb3ed1c28176b583a427",
+				"dweb:/ipfs/QmTn16zd3VmfU123FWCzAZJrk1iF3NeC4Gauotf84WZhhd"
+			]
+		}
+	},
+	"version": 1
+}

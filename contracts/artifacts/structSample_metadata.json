@@ -6,6 +6,43 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "age",
+						"type": "uint8"
+					}
+				],
+				"name": "newLearner",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "Simplilearn",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint8",
@@ -66,7 +103,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/structs.sol": "structSample"
+			"contracts/constructor.sol": "structSample"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -80,12 +117,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/structs.sol": {
-			"keccak256": "0x929500f9c00fad7d27630a18222b680dbf41d894eeaf2bca0b7363c5ed97e78b",
+		"contracts/constructor.sol": {
+			"keccak256": "0x7c7c82325cdf57c2d9431309028835810de966d84fb72f7207846db9a56543e8",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9633010b72ef0cfd129bba17f921a52797a45a58fcd778111ee5646694ceab4e",
-				"dweb:/ipfs/QmQVNdnGwLHXGa2uEaQoXkxrQ9m9PodPZXXzy2JRrbM9EL"
+				"bzz-raw://18395990160613114c6acab5b516b8941bbf08207288ff4819cf5f540c8ceb2b",
+				"dweb:/ipfs/QmePT2jntwexaBYjyzSTM9WcD7tVWuGcHKUs9n5XMKKCg2"
 			]
 		}
 	},

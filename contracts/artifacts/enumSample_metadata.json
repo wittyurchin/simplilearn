@@ -1,22 +1,15 @@
 {
 	"compiler": {
-		"version": "0.6.12+commit.27d51765"
+		"version": "0.8.22+commit.4fc1097e"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
 			{
 				"inputs": [],
-				"name": "TransferMoney",
+				"name": "set",
 				"outputs": [],
 				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getMoney",
-				"outputs": [],
-				"stateMutability": "payable",
 				"type": "function"
 			}
 		],
@@ -33,9 +26,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/address.sol": "Money"
+			"contracts/enum.sol": "enumSample"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -47,12 +40,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/address.sol": {
-			"keccak256": "0x243589a2a6d30e61fba42b8b7f25187d952eff53aac965e034fafc84ddd9f043",
+		"contracts/enum.sol": {
+			"keccak256": "0xdb57f99f2b5babe77cccf35d2b5477417c90a1d991164bcfa1970d7fa21fc7bc",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://78acfbf2b9d377d513ce9245a5e0adda1f5c1c8a42d25a3f14cf2a2c703de958",
-				"dweb:/ipfs/QmQBKtLTE5yC4Ns4KwG7aYiAoq2W88RFd1JTBu4BPAak1G"
+				"bzz-raw://a0b95e9e98e04280d94475702bc3c2ec22cfde891fd0f3ce9fdb7c94332c0391",
+				"dweb:/ipfs/QmaZWANLnjF2uznms5QR8tkMWQDr9iW1UL92NppoQ3GzkC"
 			]
 		}
 	},
