@@ -137,10 +137,11 @@
 	},
 	"sources": {
 		"contracts/property.sol": {
-			"keccak256": "0x8a9319b5738ada317de9ce19f52e2619c24aa91b67d148101dbbcadbbc971fba",
+			"keccak256": "0x71ac5fdac8b81de3a0f521a98ed8a6011ddd1f398432610dff45446835be2dd4",
+			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://490a3dec21f0e3339ceda37f881a7fd8742a04b97de460a5296e445d11861fe8",
-				"dweb:/ipfs/Qmb8HKdiYvrbvwP248YDmGeJxqn81GCq64zPiu9sz3Td9d"
+				"bzz-raw://e68c0cf406b87f4603339a8a7ccab9188ad7cd62a3c38827aa9284e401f27ee6",
+				"dweb:/ipfs/QmUf1sfuiEpR3HT7b3yXJWe84NCXxs2R1ez3bUptitdQRm"
 			]
 		}
 	},
