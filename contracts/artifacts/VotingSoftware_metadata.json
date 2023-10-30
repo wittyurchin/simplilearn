@@ -174,6 +174,29 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "showWinner",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "candidateId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "votesSecured",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -257,11 +280,11 @@
 	},
 	"sources": {
 		"contracts/voting.sol": {
-			"keccak256": "0xe2713dfd559dbab66380dadc1c7b05c5cce7443016857d4ef9c38fd232ee631c",
+			"keccak256": "0x5a3eafce1b86c16c136b161a51cdb4489967c26bb89362660c8ad3a53e0aeb08",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a040adf05060e0dac79a948ed503af1d82f23ec9532b866dd59e4014eea49aa5",
-				"dweb:/ipfs/QmcBeibAFSUBebsCAeMhvuJsWsyRfe7RCseDDt6qb8VQXP"
+				"bzz-raw://df4191460e3a1d7df80f9cec6963661159c68817f7074a6c47c044c2d9740651",
+				"dweb:/ipfs/QmZdvL57LJ9V8cvKXTxbueLfzeaCPgnXLSqEJFf87czkBU"
 			]
 		}
 	},

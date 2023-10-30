@@ -17,6 +17,7 @@ contract VotingSoftware{
         uint256 id;
         string name;
         address addressVoter;
+        bool hasDelegated;
         address delegatedTo;
         bool hasVoted;
         uint256 cadidateId;
@@ -96,17 +97,28 @@ contract VotingSoftware{
         );
     }
 
-    // 5. Show the winner of the election
-    // function showWinner() public view{
-    //     uint256[] memory winnerCandidateIds;
-    //     uint256 highestVoteCount;
-    //     for(uint i=0; i<candidateCount; i++){
-    //         if (voteCounts[i] == highestVoteCount){
-    //             winnerCandidateIds.push(i);
-
-    //         }
-    //     }
-    // }
+    //5. Show the winner of the election
+    function showWinner() public view 
+        returns(
+            uint256 candidateId,
+            string memory name,
+            uint256 votesSecured
+        )
+    {
+        require(status!=VotingStatus.NOT_STARTED, "Voting not started");
+        uint256 winnerCandidateId;
+        uint256 highestVoteCount;
+        for(uint i=1; i<=candidateCount; i++){
+            uint256 canId = i;
+            uint256 candidateVoteCount = voteCounts[canId];
+            if (candidateVoteCount > highestVoteCount){
+                winnerCandidateId = canId;
+                highestVoteCount = candidateVoteCount;
+            }
+        }
+        require(highestVoteCount>0, "No votes yet");
+        return (winnerCandidateId, candidates[winnerCandidateId].name, highestVoteCount);
+    }
 
     // 6. Delegate the voting right
     function delegateVotingRight(address _delegatedTo, address _addressVoter) public {
@@ -114,16 +126,20 @@ contract VotingSoftware{
         require(msg.sender==_addressVoter, "Only address owner can delegate voting rights to another address.");
         require(voters[_addressVoter].hasVoted == false, "You can not delegate voting rights. You have already voted.");
         voters[_addressVoter].delegatedTo = _delegatedTo;
+        voters[_addressVoter].hasDelegated = true;
     }
 
     // 7. Cast the vote
     function castVote(uint256 _candidateId, address _addressVoter) public {
+        require(status==VotingStatus.ONGOING, "Voting not in progress. You can not vote now.");
         require(candidateCount>0, "0 candidates registered");
         require(candidates[_candidateId].flag, "candidate with id does not exist");
         require(voters[_addressVoter].flag, "voter with address does not exist");
-        require(voters[_addressVoter].hasVoted, "Vote already placed");
-        if (voters[_addressVoter].delegatedTo != msg.sender){
-            require(msg.sender==_addressVoter, "you can not vote");
+        require(voters[_addressVoter].hasVoted==false, "Vote already placed");
+        if (voters[_addressVoter].hasDelegated == false){
+            require(msg.sender == _addressVoter, "you can not vote for this address. You don't own the address");
+        }else if(voters[_addressVoter].hasDelegated){
+            require(msg.sender==voters[_addressVoter].delegatedTo, "You don't own the address. The address owner has not delegated to you");
         }
         voteCounts[_candidateId] =  voteCounts[_candidateId] + 1;
         voters[_addressVoter].cadidateId = _candidateId;
