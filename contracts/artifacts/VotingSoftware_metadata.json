@@ -37,6 +37,11 @@
 						"internalType": "string",
 						"name": "_proposal",
 						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_contractOwner",
+						"type": "address"
 					}
 				],
 				"name": "addNewCandidate",
@@ -55,6 +60,11 @@
 						"internalType": "string",
 						"name": "_name",
 						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_contractOwner",
+						"type": "address"
 					}
 				],
 				"name": "addNewVoter",
@@ -164,7 +174,13 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_contractOwner",
+						"type": "address"
+					}
+				],
 				"name": "startElection",
 				"outputs": [],
 				"stateMutability": "nonpayable",
@@ -241,11 +257,11 @@
 	},
 	"sources": {
 		"contracts/voting.sol": {
-			"keccak256": "0x0ca5028a5715ab00a2a418d813ffb5b751f9afbf4bca5bf04c53cb61f34eacf3",
+			"keccak256": "0x11c761c8a7bb3376605416a753ea8591121b235afc74fe95b0c80808e1049aa2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://cb94b86b5a5f34d81d3a2cd283ce3a3c87765cf5993fdf2af349379ce57f1eff",
-				"dweb:/ipfs/QmW1eATjPdtxnyXzo9y7S2S1Pyar6jkHWDJdJCJVrhWD2q"
+				"bzz-raw://e3c93658e7d107eb449e37ff9787ef55a94ec50a5cabbd8cf001da075d30aade",
+				"dweb:/ipfs/QmfYYS8AhPsup2VA3JEPAwG34JCPaH189hFhLTzkgvrnmf"
 			]
 		}
 	},
