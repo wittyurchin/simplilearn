@@ -4,7 +4,77 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "_index",
+						"type": "uint8"
+					}
+				],
+				"name": "readData",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "readDynamicArray",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "_index",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint8",
+						"name": "_value",
+						"type": "uint8"
+					}
+				],
+				"name": "setData",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_phoneno",
+						"type": "uint256"
+					}
+				],
+				"name": "setDynamicArray",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -18,7 +88,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/voting.sol": "arraySample"
+			"contracts/array.sol": "arraySample"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -32,12 +102,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/voting.sol": {
-			"keccak256": "0xc4f261a5225a9c3e8c17337b08b1a76f5a9055b97d4b485985deeff5c8a26df8",
+		"contracts/array.sol": {
+			"keccak256": "0xa4210a00a7d7c8620404ba588b24f5e74b645ff81d444a1c9ce2d053d57124c2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://45e7057ac43dd8e970e77ea4cbbcf4ea62a00e334b36e2471f58b005f3fbf359",
-				"dweb:/ipfs/QmP1vR5cWvW2zUNRRNGa4HwXuiqoqzkexGwk3833Cg9XWQ"
+				"bzz-raw://e1462ce99a57b1bd80a52c22dd785e22e0bf1ccce8de629de359cc4384b03309",
+				"dweb:/ipfs/QmZ42aY4fL4GYBRFTEPH6TedL164AE9kmZcCh3kr1SfKdk"
 			]
 		}
 	},

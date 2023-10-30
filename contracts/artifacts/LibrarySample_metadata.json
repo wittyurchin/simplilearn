@@ -16,19 +16,9 @@
 						"internalType": "int256",
 						"name": "b",
 						"type": "int256"
-					},
-					{
-						"internalType": "int256",
-						"name": "c",
-						"type": "int256"
-					},
-					{
-						"internalType": "int256",
-						"name": "d",
-						"type": "int256"
 					}
 				],
-				"name": "adding",
+				"name": "div",
 				"outputs": [
 					{
 						"internalType": "int256",
@@ -53,7 +43,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Copy_library.sol": "LibrarySample"
+			"contracts/library.sol": "LibrarySample"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -67,12 +57,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Copy_library.sol": {
-			"keccak256": "0x1b61735f4f72902a781a89a2fac12c21bf4c3775b77f4d1fad3999a684514184",
+		"contracts/library.sol": {
+			"keccak256": "0xf200fa46243d0ab0949daee2ae3ae970be6f8b74a3c318e372546fd4efb262b3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e050c5da7936ea91647a1e875264d571a16147aafb3ebb3ed1c28176b583a427",
-				"dweb:/ipfs/QmTn16zd3VmfU123FWCzAZJrk1iF3NeC4Gauotf84WZhhd"
+				"bzz-raw://357a63d8220f9a01def09852755adff232491c82d458670bac17f757bac5c757",
+				"dweb:/ipfs/QmdQsPHByZ6EDqtQSHg29v2SV4qsYEUdHcN3ikkLrbpnry"
 			]
 		}
 	},
