@@ -18,7 +18,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/voting.sol": "arraySample"
+			"contracts/voting.sol": "VotingSoftware"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -33,11 +33,11 @@
 	},
 	"sources": {
 		"contracts/voting.sol": {
-			"keccak256": "0xc4f261a5225a9c3e8c17337b08b1a76f5a9055b97d4b485985deeff5c8a26df8",
+			"keccak256": "0x330fd5cd19c7dbe45d951d86a67aa36b21bdb44bcb00b0dade9579d837bf380e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://45e7057ac43dd8e970e77ea4cbbcf4ea62a00e334b36e2471f58b005f3fbf359",
-				"dweb:/ipfs/QmP1vR5cWvW2zUNRRNGa4HwXuiqoqzkexGwk3833Cg9XWQ"
+				"bzz-raw://05e0619177f6e4531aac19725d7b238a32e74c538caca570af5f8570341f2873",
+				"dweb:/ipfs/QmP7a6Qe7KFidgFFn63Y13AhEcNwqvP6Y4wWPnRaRvJ7gD"
 			]
 		}
 	},
