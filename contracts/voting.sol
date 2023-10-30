@@ -47,6 +47,7 @@ contract VotingSoftware{
         require(status==VotingStatus.NOT_STARTED, "Voting already started or completed");
         candidateCount++;
         uint256 candidateId = candidateCount;
+        candidates[candidateId].id = candidateId;
         candidates[candidateId].name = _name;
         candidates[candidateId].proposal = _proposal;
         candidates[candidateId].flag = true;
@@ -87,6 +88,7 @@ contract VotingSoftware{
             string memory name
         )
     {
+        require(candidates[_candidateId].flag, "Candidate with id does not exist");
         return (
             candidates[_candidateId].id,
             candidates[_candidateId].proposal,
@@ -116,6 +118,7 @@ contract VotingSoftware{
 
     // 7. Cast the vote
     function castVote(uint256 _candidateId, address _addressVoter) public {
+        require(candidateCount>0, "0 candidates registered");
         require(candidates[_candidateId].flag, "candidate with id does not exist");
         require(voters[_addressVoter].flag, "voter with address does not exist");
         require(voters[_addressVoter].hasVoted, "Vote already placed");
@@ -129,7 +132,11 @@ contract VotingSoftware{
 
     // 8. End the election
     function endElection() public onlyVotingAdmin(){
-        require(status==VotingStatus.ONGOING, "Either voting has not started or completed.");
+        if( status == VotingStatus.NOT_STARTED){
+            revert("voting not started");
+        }else if (status == VotingStatus.COMPLETED){
+            revert("voting ended");
+        }
         status = VotingStatus.COMPLETED;
     }
 
@@ -140,6 +147,7 @@ contract VotingSoftware{
                 uint256 voteCount
         )
     {
+        require(status!=VotingStatus.NOT_STARTED, "Voting not started");
         return(
             _candidateId,
             candidates[_candidateId].name,
@@ -154,6 +162,7 @@ contract VotingSoftware{
             bool isVoteDelegated
         )
     {
+        require(voters[_addressVoter].flag, "voter with address does not exist");
         return(
             voters[_addressVoter].addressVoter,
             voters[_addressVoter].name,
