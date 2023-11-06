@@ -178,6 +178,40 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "_doctorId",
+						"type": "uint256"
+					}
+				],
+				"name": "viewDoctorDetails",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "doctorId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "qualification",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "workPlace",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "_medicineId",
 						"type": "uint256"
 					}
@@ -216,7 +250,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "viewPatiendData",
+				"name": "viewPatientData",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -250,7 +284,7 @@
 						"type": "address"
 					}
 				],
-				"name": "viewPatiendData",
+				"name": "viewPatientData",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -271,6 +305,59 @@
 						"internalType": "string[]",
 						"name": "diseases",
 						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_patientId",
+						"type": "uint256"
+					}
+				],
+				"name": "viewPatientDatabyDoctor",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "patientId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "age",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "diseases",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_patientAddress",
+						"type": "address"
+					}
+				],
+				"name": "viewPatientMedicines",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "meds",
+						"type": "uint256[]"
 					}
 				],
 				"stateMutability": "view",
@@ -305,11 +392,11 @@
 	},
 	"sources": {
 		"contracts/patientrecord.sol": {
-			"keccak256": "0x1cd2bf3dc845061b36f5207ce87e1cd14e345a8d30eb68fd03e3c777189195e7",
+			"keccak256": "0x0c09637f679f865b8bd8dfac9b66aae404e5eaa47bd453cc4b92ba1a642ae054",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://56059da8fa3863fb7c6fe101ee337aa8ff9f87650e0fb6c9b06e321fa98c7af2",
-				"dweb:/ipfs/QmReZfoSBgMMDWWrRhp2ww25nWLbFd7o8tp2aXzPDS87PF"
+				"bzz-raw://88c124b6c46e00ff1c9ba7d50a22537339433e85c734b15d47610d76123cfe5c",
+				"dweb:/ipfs/QmYpo59i3Vb8jNTSWNojPdfEH5yH3jt3QnBArNw1UDE9Dw"
 			]
 		}
 	},

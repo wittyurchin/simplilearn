@@ -106,7 +106,7 @@ contract VotingSoftware{
     }
 
     // 7. View patient data
-    function viewPatiendData(uint256 _patientId) public view
+    function viewPatientData(uint256 _patientId) public view
         returns(uint256 patientId, 
                 uint256 age, 
                 string memory name, 
@@ -121,14 +121,14 @@ contract VotingSoftware{
     }
 
     // 7.1 View patient data
-    function viewPatiendData(address _patientAddress) public view 
+    function viewPatientData(address _patientAddress) public view 
         returns(uint256 patientId, 
                 uint256 age, 
                 string memory name, 
                 string[] memory diseases)
     {
         uint256 _patientId = patiendAddressID[_patientAddress];
-        return viewPatiendData(_patientId);
+        return viewPatientData(_patientId);
     }
 
     // 8 View medicine detatils
@@ -143,6 +143,46 @@ contract VotingSoftware{
             medicines[_medicineId].expiryDate,
             medicines[_medicineId].dose,
             medicines[_medicineId].price
+        );
+    }
+
+    // 9. View patient data by doctor
+    function viewPatientDatabyDoctor(uint256 _patientId) public view
+        returns(uint256 patientId, 
+                uint256 age, 
+                string memory name, 
+                string[] memory diseases)
+    {
+        return(
+            patients[_patientId].id,
+            patients[_patientId].age,
+            patients[_patientId].name,
+            patients[_patientId].diseases
+        );
+    }
+
+    // 10. View prescribed medicines to the patient
+    function viewPatientMedicines(address _patientAddress) public view
+        returns(uint256[] memory meds)
+    {
+        uint256 _patientId = patiendAddressID[_patientAddress];
+        return(
+            patients[_patientId].medicines
+        );
+    }
+
+    // 11. View doctor details
+    function viewDoctorDetails(uint256 _doctorId) public view
+        returns(uint256 doctorId, 
+                string memory name, 
+                string memory qualification,
+                string memory workPlace)
+    {
+        return(
+            doctors[_doctorId].id,
+            doctors[_doctorId].name,
+            doctors[_doctorId].qualification,
+            doctors[_doctorId].workPlace
         );
     }
 }
