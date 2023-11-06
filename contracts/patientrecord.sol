@@ -19,11 +19,7 @@ contract VotingSoftware{
         string qualification;
         string workPlace;
         bool flag; //flag is set to true when doctor object is initialized by application
-
-        address delegatedTo;
-        bool hasVoted;
-        uint256 cadidateId;
-        
+        address doctorAddress;        
     }
 
     struct Patient {
@@ -42,6 +38,7 @@ contract VotingSoftware{
         string expiryDate;
         string dose;
         uint256 price;
+        bool flag; //flag is set to true when medicine object is initialized by application
     }
     //other variables
     uint256 doctorCount = 0; // doctor id starts from 1
@@ -51,84 +48,83 @@ contract VotingSoftware{
     mapping(uint256 => Doctor) doctors;
     mapping(uint256 => Patient) patients;
     mapping(uint256 => Medicine) medicines;
-    mapping(address => uint256) patiendAddressID; //patient address to id mapping
+    mapping(address => uint256) patientAddressID; //patient address to id mapping
+    mapping(address => uint256) doctordAddressID; //patient address to id mapping
+
     
     // 1. Register a new doctor
     function registerNewDoctor(string memory _name, string memory _qualification, string memory _workPlace) public {
+        require(doctordAddressID[msg.sender]==0, "Doctor account already exists with this blockchain address");
         uint256 doctorId = doctorCount+1;
         doctors[doctorId].id = doctorId;
         doctors[doctorId].name = _name;
         doctors[doctorId].qualification = _qualification;
         doctors[doctorId].workPlace = _workPlace;
+        doctors[doctorId].doctorAddress = msg.sender;
         doctors[doctorId].flag = true;
+        doctordAddressID[msg.sender] = doctorId;
     }
 
     // 2. Register a new patient
-    function registerNewPatient(string memory _name, uint256 _age, address _patientAddress) public {
+    function registerNewPatient(string memory _name, uint256 _age) public {
+        require(patientAddressID[msg.sender]==0, "Patient account already exists with this blockchain address");
         uint256 patientId = patientCount+1;
         patients[patientId].id = patientId;
         patients[patientId].name = _name;
         patients[patientId].age = _age;
         patients[patientId].flag = true;
-        patients[patientId].patientAddress = _patientAddress;
+        patients[patientId].patientAddress = msg.sender;
     }
 
     // 3. Add a patient's disease
-    function addPatientDisease(uint256 _id, string memory _disease) public {
-        patients[_id].diseases.push(_disease);
+    function addPatientDisease(string memory _disease) public {
+        require(patientAddressID[msg.sender]!=0, "Patient account with blockchain address does not exist. Please register");
+        uint256 patientId = patientAddressID[msg.sender];
+        patients[patientId].diseases.push(_disease);
     }
 
     // 4. Add medicine
     function addMedicine(uint256 _id, string memory _name, string memory _expiryDate, string memory _dose, uint256 _price) public {
+        require(medicines[_id].flag==false, "Medicine with id already exists");
         medicineCount++;
         medicines[_id].id = _id;
         medicines[_id].name = _name;
         medicines[_id].expiryDate = _expiryDate;
         medicines[_id].dose = _dose;
         medicines[_id].price = _price;
+        medicines[_id].flag = true;
     }
 
     // 5. Prescribe medicine
     function prescribeMedicine(uint256 _medicineId, address _patientAddress) public {
-        uint256 patientId = patiendAddressID[_patientAddress];
+        require(patientAddressID[_patientAddress]!=0, "Patient with address does not exist");
+        require(medicines[_medicineId].flag, "Medicine with id does not exist");
+        uint256 patientId = patientAddressID[_patientAddress];
         patients[patientId].medicines.push(_medicineId);
     }
 
     // 6. Update patient details by patient
-    function updatePatientDetails(uint256 _patientId, uint256 _age) public {
-        patients[_patientId].age = _age;
-    }
-
-    // 6.1 Update patient details by patient
-    function updatePatientDetails(address _patientAddress, uint256 _age) public {
-        uint256 patientId = patiendAddressID[_patientAddress];
+    function updatePatientDetails(uint256 _age) public {
+        require(patientAddressID[msg.sender]!=0, "Patient account with blockchain address does not exist. Please register");
+        uint256 patientId = patientAddressID[msg.sender];
         patients[patientId].age = _age;
     }
 
     // 7. View patient data
-    function viewPatientData(uint256 _patientId) public view
+    function viewPatientDataSelf() public view
         returns(uint256 patientId, 
                 uint256 age, 
                 string memory name, 
                 string[] memory diseases)
     {
+        require(patientAddressID[msg.sender]!=0, "Patient account with blockchain address does not exist. Please register");
+        uint256 _patientId = patientAddressID[msg.sender];
         return(
             patients[_patientId].id,
             patients[_patientId].age,
             patients[_patientId].name,
             patients[_patientId].diseases
         );
-    }
-
-    // 7.1 View patient data
-    function viewPatientData(address _patientAddress) public view 
-        returns(uint256 patientId, 
-                uint256 age, 
-                string memory name, 
-                string[] memory diseases)
-    {
-        uint256 _patientId = patiendAddressID[_patientAddress];
-        return viewPatientData(_patientId);
     }
 
     // 8 View medicine detatils
@@ -138,6 +134,7 @@ contract VotingSoftware{
                 string memory dose, 
                 uint256 price)
     {
+        require(medicines[_medicineId].flag, "Medicine with id does not exist");
         return(
             medicines[_medicineId].name,
             medicines[_medicineId].expiryDate,
@@ -153,6 +150,7 @@ contract VotingSoftware{
                 string memory name, 
                 string[] memory diseases)
     {
+        require(patients[_patientId].flag, "Patient with id does not exist");
         return(
             patients[_patientId].id,
             patients[_patientId].age,
@@ -165,7 +163,8 @@ contract VotingSoftware{
     function viewPatientMedicines(address _patientAddress) public view
         returns(uint256[] memory meds)
     {
-        uint256 _patientId = patiendAddressID[_patientAddress];
+        require(patientAddressID[_patientAddress]!=0, "Patient with address does not exist");
+        uint256 _patientId = patientAddressID[_patientAddress];
         return(
             patients[_patientId].medicines
         );
@@ -178,6 +177,7 @@ contract VotingSoftware{
                 string memory qualification,
                 string memory workPlace)
     {
+        require(doctors[_doctorId].flag, "Doctor with id does not exist");
         return(
             doctors[_doctorId].id,
             doctors[_doctorId].name,
