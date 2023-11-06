@@ -74,6 +74,7 @@ contract VotingSoftware{
         patients[patientId].age = _age;
         patients[patientId].flag = true;
         patients[patientId].patientAddress = msg.sender;
+        patientAddressID[msg.sender] = patientId;
     }
 
     // 3. Add a patient's disease
