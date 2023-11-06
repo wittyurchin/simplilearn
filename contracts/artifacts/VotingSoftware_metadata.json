@@ -13,21 +13,10 @@
 			{
 				"inputs": [
 					{
-						"internalType": "enum VotingSoftware.VotingStatus",
-						"name": "status",
-						"type": "uint8"
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
 					},
-					{
-						"internalType": "string",
-						"name": "message",
-						"type": "string"
-					}
-				],
-				"name": "CanNotStartElection",
-				"type": "error"
-			},
-			{
-				"inputs": [
 					{
 						"internalType": "string",
 						"name": "_name",
@@ -35,39 +24,21 @@
 					},
 					{
 						"internalType": "string",
-						"name": "_proposal",
+						"name": "_expiryDate",
 						"type": "string"
-					},
-					{
-						"internalType": "address",
-						"name": "_contractOwner",
-						"type": "address"
-					}
-				],
-				"name": "addNewCandidate",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_addressVoter",
-						"type": "address"
 					},
 					{
 						"internalType": "string",
-						"name": "_name",
+						"name": "_dose",
 						"type": "string"
 					},
 					{
-						"internalType": "address",
-						"name": "_contractOwner",
-						"type": "address"
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
 					}
 				],
-				"name": "addNewVoter",
+				"name": "addMedicine",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -76,176 +47,230 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_candidateId",
-						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "_addressVoter",
-						"type": "address"
-					}
-				],
-				"name": "castVote",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_delegatedTo",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "_addressVoter",
-						"type": "address"
-					}
-				],
-				"name": "delegateVotingRight",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_candidateId",
-						"type": "uint256"
-					}
-				],
-				"name": "displayCandidateDetails",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "candidateId",
+						"name": "_id",
 						"type": "uint256"
 					},
 					{
 						"internalType": "string",
-						"name": "proposal",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "name",
+						"name": "_disease",
 						"type": "string"
 					}
 				],
-				"stateMutability": "view",
+				"name": "addPatientDisease",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "endElection",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_candidateId",
-						"type": "uint256"
-					}
-				],
-				"name": "showElectionResults",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "candidateId",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "voteCount",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "showWinner",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "candidateId",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "votesSecured",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_contractOwner",
-						"type": "address"
-					}
-				],
-				"name": "startElection",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_addressVoter",
-						"type": "address"
-					}
-				],
-				"name": "viewVoterDetails",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "addressVoter",
-						"type": "address"
-					},
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "bool",
-						"name": "isVoteDelegated",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "votingAdmin",
+				"name": "contractOwner",
 				"outputs": [
 					{
 						"internalType": "address",
 						"name": "",
 						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_medicineId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_patientAddress",
+						"type": "address"
+					}
+				],
+				"name": "prescribeMedicine",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_qualification",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_workPlace",
+						"type": "string"
+					}
+				],
+				"name": "registerNewDoctor",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_age",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_patientAddress",
+						"type": "address"
+					}
+				],
+				"name": "registerNewPatient",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_patientId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_age",
+						"type": "uint256"
+					}
+				],
+				"name": "updatePatientDetails",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_patientAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_age",
+						"type": "uint256"
+					}
+				],
+				"name": "updatePatientDetails",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_medicineId",
+						"type": "uint256"
+					}
+				],
+				"name": "viewMedicineDetails",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "expiryDate",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "dose",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_patientId",
+						"type": "uint256"
+					}
+				],
+				"name": "viewPatiendData",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "patientId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "age",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "diseases",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_patientAddress",
+						"type": "address"
+					}
+				],
+				"name": "viewPatiendData",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "patientId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "age",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "diseases",
+						"type": "string[]"
 					}
 				],
 				"stateMutability": "view",
@@ -265,7 +290,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/voting.sol": "VotingSoftware"
+			"contracts/patientrecord.sol": "VotingSoftware"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -279,12 +304,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/voting.sol": {
-			"keccak256": "0x5a3eafce1b86c16c136b161a51cdb4489967c26bb89362660c8ad3a53e0aeb08",
+		"contracts/patientrecord.sol": {
+			"keccak256": "0x1cd2bf3dc845061b36f5207ce87e1cd14e345a8d30eb68fd03e3c777189195e7",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://df4191460e3a1d7df80f9cec6963661159c68817f7074a6c47c044c2d9740651",
-				"dweb:/ipfs/QmZdvL57LJ9V8cvKXTxbueLfzeaCPgnXLSqEJFf87czkBU"
+				"bzz-raw://56059da8fa3863fb7c6fe101ee337aa8ff9f87650e0fb6c9b06e321fa98c7af2",
+				"dweb:/ipfs/QmReZfoSBgMMDWWrRhp2ww25nWLbFd7o8tp2aXzPDS87PF"
 			]
 		}
 	},
